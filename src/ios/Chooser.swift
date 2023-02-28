@@ -44,7 +44,7 @@ class Chooser : CDVPlugin {
             let resources = try url.resourceValues(forKeys:[.fileSizeKey])
             let fileSize = resources.fileSize!
             print ("\(fileSize)")
-            if(fileSize > maxFileSize){
+            if(maxFileSize != 0 && fileSize > maxFileSize){
                 self.sendError("Invalid size")
                 return
             }
